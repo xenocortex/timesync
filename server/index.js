@@ -94,6 +94,17 @@ exports.requestHandler = function (req, res) {
     }
   }
 
+  if (req.method == 'OPTIONS') {
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Request-Method', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
+    res.setHeader('Access-Control-Allow-Headers', '*');
+    res.writeHead(200);
+    res.end();
+    return;
+  }
+
   res.writeHead(404);
   res.end('Not found');
 };
@@ -118,6 +129,11 @@ function sendTimestamp(req, res) {
     };
 
     res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Request-Method', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
+    res.setHeader('Access-Control-Allow-Headers', '*');
+
     res.writeHead(200);
     res.end(JSON.stringify(data));
   });

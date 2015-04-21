@@ -1,5 +1,5 @@
 {
-  "name": "timesync",
+  "name": "@xenocortex/timesync",
   "version": "0.1.0",
   "description": "Time synchronization between peers",
   "author": "Jos de Jong <wjosdejong@gmail.com> (https://github.com/josdejong)",
